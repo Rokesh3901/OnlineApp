@@ -1,5 +1,9 @@
 package com.OnlineApp;
 
+
+import java.util.Date;
+
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -16,7 +20,11 @@ public class OnlineAppApplication {
 		
 	    ProductServiceImpl productServiceImpl = applicationContext.getBean(ProductServiceImpl.class);
 	    
-	    System.out.println(productServiceImpl.getProducts());
+	    
+		//Date d1 = new Date(2025,9,03);
+	  // System.out.println(productServiceImpl.findByProductValidityEquals(d1));
+	    
+	    System.out.println(productServiceImpl.findByProductPriceBetween(10000,20000));
 	}
 
 }
